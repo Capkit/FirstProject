@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="423.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fooddetails.ViewController">
+   <children>
+      <Pane id="detailPane" fx:id="detailPane" layoutX="-1.0" prefHeight="430.0" prefWidth="637.0" visible="false" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="168.0" layoutX="14.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="593.0" />
+            <TableView id="table" fx:id="table" editable="true" layoutX="14.0" layoutY="8.0" prefHeight="116.0" prefWidth="513.0">
+                <placeholder>
+                    <Label text="Nincs adat." />
+                </placeholder>
+              <columns>
+              </columns>
+              <columns>
+              </columns>
+            </TableView>
+            <Button id="tableBackButton" fx:id="tableBackButton" layoutX="296.0" layoutY="324.0" mnemonicParsing="false" onAction="#backToMainMenu" prefHeight="27.0" prefWidth="54.0" text="Back">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Button>
+            <TextField id="inputName" fx:id="inputName" layoutX="262.0" layoutY="140.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField id="inputP" fx:id="inputP" layoutX="262.0" layoutY="174.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField id="inputK" fx:id="inputK" layoutX="262.0" layoutY="214.0" prefHeight="25.0" prefWidth="121.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="148.0" layoutY="144.0" prefHeight="16.0" prefWidth="100.0" text="Name:">
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="148.0" layoutY="178.0" prefHeight="16.0" prefWidth="100.0" text="Protein (mg):">
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="217.0" prefHeight="20.0" prefWidth="107.0" text="Potassium (mg):">
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font>
+            </Label>
+            <Button id="inputNewDataButton" fx:id="inputNewDataButton" layoutX="281.0" layoutY="253.0" mnemonicParsing="false" onAction="#inputNewData" prefHeight="27.0" prefWidth="76.0" text="Add" textFill="#685959">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="29.0" layoutY="134.0" prefHeight="20.0" prefWidth="294.0" text="Add data:">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <Label id="alertLabel" fx:id="alertLabel" layoutX="29.0" layoutY="88.0" prefHeight="17.0" prefWidth="436.0" />
+         </children>
+      </Pane>
+      <Pane id="basePane" fx:id="basePane" layoutX="176.0" layoutY="118.0" prefHeight="195.0" prefWidth="286.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="-4.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="294.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="49.0" prefHeight="17.0" prefWidth="155.0" text="Type food:" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button id="searchButton" fx:id="searchButton" layoutX="116.0" layoutY="134.0" mnemonicParsing="false" onAction="#searchData" text="Search" />
+            <TextField id="searchInput" fx:id="searchInput" layoutX="50.0" layoutY="85.0" prefHeight="25.0" prefWidth="188.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
