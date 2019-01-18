@@ -28,8 +28,8 @@
                   <Font name="Calibri" size="12.0" />
                </font></Button>
             <TextField id="inputName" fx:id="inputName" layoutX="262.0" layoutY="140.0" prefHeight="25.0" prefWidth="121.0" />
-            <TextField id="inputP" fx:id="inputP" layoutX="262.0" layoutY="174.0" prefHeight="25.0" prefWidth="121.0" />
-            <TextField id="inputK" fx:id="inputK" layoutX="262.0" layoutY="214.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField id="inputProtein" fx:id="inputP" layoutX="262.0" layoutY="174.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField id="inputPot" fx:id="inputK" layoutX="262.0" layoutY="214.0" prefHeight="25.0" prefWidth="121.0" />
             <Label alignment="CENTER_RIGHT" layoutX="148.0" layoutY="144.0" prefHeight="16.0" prefWidth="100.0" text="Name:">
                <font>
                   <Font name="Calibri Light" size="14.0" />
