@@ -3,7 +3,7 @@ package fooddetails;
 
 import javafx.beans.property.SimpleStringProperty;
 
-
+//creating POJO
 public class Food {
     
     private final SimpleStringProperty name;
@@ -28,12 +28,12 @@ public class Food {
     
     public Food (Integer id, String name, String protein, String potassium) {
     this.name = new SimpleStringProperty(name);
-    this.protein = new SimpleStringProperty(protein);
+    this.protein = new SimpleStringProperty(protein); //value of "protein" and "potassium" is defined as a String value
     this.potassium = new SimpleStringProperty(potassium);
     this.id = new SimpleStringProperty(String.valueOf(id));
     }
     
- 
+    //Getters and setters
     public String getName() {
         return name.get();
     }
