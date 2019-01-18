@@ -21,7 +21,7 @@ import javafx.scene.layout.Pane;
 
 
 public class ViewController implements Initializable {
-    
+    // FXML Annotations
     @FXML
     Pane basePane;
     @FXML 
@@ -37,15 +37,15 @@ public class ViewController implements Initializable {
     @FXML 
     TextField inputName;
     @FXML 
-    TextField inputP;
+    TextField inputProtein;
     @FXML 
-    TextField inputK;
+    TextField inputPot;
 
-    
+    //connect to the database
     DB db = new DB();
     private final ObservableList<Food> data = FXCollections.observableArrayList();
     
-    //Gombok
+    //Action handler for "Search" button basePane
     @FXML
     public void searchData(ActionEvent event) {
     String input = searchInput.getText();
@@ -59,16 +59,18 @@ public class ViewController implements Initializable {
     }
     }
     
+    //Action handler for "Add" Button on detailPane
     @FXML
     public void inputNewData(ActionEvent event) {
-    Food actualFood = new Food(inputName.getText(), inputP.getText(), inputK.getText());
+    Food actualFood = new Food(inputName.getText(), inputProtein.getText(), inputPot.getText());
     data.add(actualFood);
     db.addData(actualFood);
     inputName.clear();
-    inputP.clear();
-    inputK.clear();
+    inputProtein.clear();
+    inputPot.clear();
     }
     
+    //Action handler for "Back" button on detailPane
     @FXML
     public void backToMainMenu(ActionEvent event) {
     detailPane.setVisible(false);
@@ -76,13 +78,15 @@ public class ViewController implements Initializable {
     basePane.setOpacity(1);   
     }
     
-    
+   
     public void setDetailPane () {
+    //set the first column in the table    
     TableColumn nameCol = new TableColumn("Name");
     nameCol.setMinWidth(200);
     nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
     nameCol.setCellValueFactory(new PropertyValueFactory<Food, String>("name"));
     
+    //set eventhandler if the user want to edit datas in the table
     nameCol.setOnEditCommit(
     new EventHandler<TableColumn.CellEditEvent<Food, String>> () {
     @Override 
@@ -93,7 +97,8 @@ public class ViewController implements Initializable {
     }
     }
     );
-      
+    
+     //set second column in the table   
     TableColumn proteinCol = new TableColumn("Protein (mg)");
     nameCol.setMinWidth(300);
     nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -110,6 +115,7 @@ public class ViewController implements Initializable {
     }
     );
     
+    //set third column in the table
     TableColumn potCol = new TableColumn("Potassium (mg)");
     nameCol.setMinWidth(300);
     nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -126,22 +132,15 @@ public class ViewController implements Initializable {
     }
     );
     
-    
+    //Add the column to the table
     table.getColumns().addAll(nameCol, proteinCol, potCol);
-            
-    data.addAll(db.getAllContacts());
-        
-    table.setItems(data);
-
-    
-    
-    
+    //set the data with values in the database        
+    data.addAll(db.getAllFood());
+    //set the table with the values    
+    table.setItems(data);    
     }
     
-    
-
-            
-    
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        setDetailPane();
